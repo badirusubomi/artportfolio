@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Anti_Shade's Playground</title>
+        <link rel="icon" type="image/x-icon" href="/images/icon.png">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap link here -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href = "./styles.css">
+
+        <!-- font here -->
+        <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+        <style>
+        html {
+        scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'JetBrains Mono';font-size: 22px;
+        }
+
+        .hero-container{
+            /* background-color: black;  */
+            color: white; 
+            width:100%; 
+            height:100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            padding:10%;
+        }
+
+        
+
+        .navbar{
+            display: flex;
+            position: fixed;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 20px;
+            z-index: 5;
+            /* height: 50px; */
+        }
+
+        .navbar a{
+            color: white;
+            font-size: small;
+        }
+
+        .glass{
+            background: rgba( 255, 255, 255, 0 );
+            /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+            backdrop-filter: blur( 18.5px );
+            -webkit-backdrop-filter: blur( 18.5px );
+            border: 0px solid rgba( 255, 255, 255, 0.18 );
+        }
+        
+        .work-flex{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+        }
+        .work-img{
+            height:50vh;
+            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            width: minmax();
+
+        }
+
+        .work-title{
+            display: flex;
+            flex-wrap: 1;
+            width: 50vw;
+
+        }
+        .reversed{
+            flex-direction: row-reverse;
+        }
+
+        .reversed .work-title{
+            justify-content: flex-end;
+        }
+
+        @media (max-width:768px){
+            /* .work-container{
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                grid-auto-rows: auto;
+                margin: 0px;
+                justify-content: center;
+                padding: 20px;
+            }
+            .work-name{
+                text-align: center;
+                text-justify: center;
+                text-justify: center;
+                width: auto;
+            } */
+            .work-flex{
+            flex-direction: column;
+            }
+
+            .reversed .work-title{
+            justify-content: center;
+            }
+
+            .work-title{
+            justify-content: center;
+            align-items: center;
+            }
+        }
+
+        .fabs {
+            --_viewport-margin: 2.5vmin;
+
+            position: fixed;
+            z-index: var(--layer-1);
+
+            inset-block: auto var(--_viewport-margin);
+            inset-inline: auto var(--_viewport-margin);
+        }
+
+        .socials{
+            z-index: 10;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: start;
+        }
+
+        .socials > p > span, .socials > p{
+            color:white;
+            font-size: small;
+        }
+
+        .circle{
+            background-color: rgba(230, 19, 19, 0);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            z-index: -1;
+            object-fit: contain;
+        }
+
+        .very-glassy{
+            background: rgba(255, 255, 255, 0);
+            /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+            backdrop-filter: blur( 18.5px );
+            -webkit-backdrop-filter: blur( 18.5px );
+            border: 0px solid rgba(255, 255, 255, 0);
+            width:300px;
+            height:300px;
+        }
+
+        .circle > img{
+            object-fit: contain;
+            
+            z-index: 1;
+        }
+
+        .rotate-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120px;
+        height: 120px;
+        margin:-60px 0 0 -60px;
+        -webkit-animation:spin 4s linear infinite;
+        -moz-animation:spin 4s linear infinite;
+        animation:spin 4s linear infinite;
+        }
+        @-moz-keyframes spin { 
+            100% { -moz-transform: rotate(360deg); } 
+        }
+        @-webkit-keyframes spin { 
+            100% { -webkit-transform: rotate(360deg); } 
+        }
+        @keyframes spin { 
+            100% { 
+                -webkit-transform: rotate(360deg); 
+                transform:rotate(360deg); 
+            } 
+        }
+
+        </style>
+    </head>
+    <body>
+        <!-- Nav bar section -->
+        <section style = "position: absolute;">
+            <header>
+                <div id = "nav" class = "navbar glass">
+                        <div class=""><a class = "" target="_blank" href="https://open.spotify.com/user/lib3w4oy0gjlux1fnk3zhxtm4?si=f923cf55dcf84380">playlists</a>
+                            </div>
+                        <div><a style="text-decoration: none;font-size: x-large;" href="#spinning_circle">Anti_Shade</a></div>
+                        <div><a href="#adamu_flex">works</a></div>
+                </div>
+
+            </header>
+
+        </section>
+
+        <!-- Intro section -->
+        <section class = "bg-black">
+            <div class = "hero-container">
+                <a style = "z-index: 4; color:white; text-decoration: none;" class = "typewrite" data-period="1000" data-type='[ "Hey, My name is Olasubomi Badiru, you may know me as Anti_Shade. Come, let me show you some cool shit"]'>
+                <span class = "wrap" style = "z-index: 10;"></span>
+                </a>
+                <div id = "spinning_circle" class = "circle glass" style="width:200px;height:200px;z-index: 1;">
+                    <img src = "images/Mist.png" class = "rotate-image">
+                </div>
+                <div  class = "circle very-glassy" style = "z-index:2">
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <!-- website categories section -->
+        <section id ="" class = "bg-black py-3" style = "p{color:white;}">
+            <div  id = "works" class = "container works-container">
+            
+            <div id = "adamu_flex" class = "work-flex">
+                <div class = "work">
+                    <a href = "./artWorks/adamu.html">
+                        <img  src="images/ADAMU.jpg" class = "work-img" loading="eager">
+                    </a>
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Adamu"</p>
+                </div>
+            </div>
+
+            <div class = "work-flex mt-5 reversed">
+                <div class = "work">
+                    <a href = "./artWorks/adunni.html">
+                        <img src="images/Adunni.jpg" class = "work-img" loading="eager">
+                    </a>
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Adunni"
+                    </p>
+                </div>
+            </div>
+
+            <div class = "work-flex mt-5">
+                <div class = "work">
+                    <a href = "./artWorks/tunnel.html">
+                    <img src="images/Tunnel.jpg" class = "work-img">
+                    </a>
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Tunnel"
+                    </p>
+                </div>
+            </div>
+
+            <div class = "work-flex mt-5 reversed">
+                <div class = "work">
+                    <img src="images/Caesar.png" class = "work-img">
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Caesar":
+                    </p>
+                </div>
+            </div>
+
+            <div class = "work-flex mt-5">
+                <div class = "work">
+                    <img src="images/RELIEF.png" class = "work-img">
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"RELIEF":
+                    </p>
+                </div>
+            </div>
+
+            <div class = "work-flex mt-5 reversed">
+                <div class = "work">
+                    <img src="images/Release.png" class = "work-img">
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"RELEASE"
+                    </p>
+                </div>
+                
+            </div>
+
+            <div class = "work-flex mt-5">
+                <div class = "work">
+                    <img src="images/Caged.png" class = "work-img">
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Caged"
+                    </p>
+                </div>
+            </div>
+
+            <div class = "work-flex mt-5 reversed">
+                <div class = "work">
+                    <img src="images/Chaos_Heart.png" class = "work-img">
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Chaos-Heart 1"
+                        <span style = "font-size: x-small;">credit: Ahanavi</span>
+                    </p>
+                </div>
+                
+            </div>
+
+            <div class = "work-flex mt-5">
+                <div class = "work">
+                    <img src="images/A_long_story.png" class = "work-img">
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"A Long Story"
+                    </p>
+                </div>
+            </div>
+             
+            
+            </div>
+            
+        </section>
+        
+
+    
+
+        <!-- footer section -->
+        <section>
+            <!-- <a href="#" class="d-flex align-items-end justify-content-center active fixed-bottom"><i class="bi bi-arrow-up-short"></i></a> -->
+
+            <footer class = "footer mt-auto py-3 socials bg-black align-middle">
+                <p>
+                <span> <a style = "color:white;" href="https://www.instagram.com/anti__shade/" target="_blank">instagram</a></span>/ 
+                <span> <a style = "color:white;" href="https://badirusubomi.github.io/badirusubomidevportfolio.github.io/" target=""_blank>dev</a></span>/ 
+                <span> <a style = "color:white;" href="">shopify</a></span>/ 
+                </p>
+            </footer>
+
+            
+        </section>
+        
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="index.js" charset="utf-8"></script>
+    </body>
+</html>
