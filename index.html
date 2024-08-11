@@ -38,6 +38,7 @@
             align-items: center; 
             text-align: center;
             padding:10%;
+            position:relative;
         }
 
         
@@ -82,6 +83,10 @@
             box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
             width: minmax();
 
+        }
+
+        .gbopemi{
+            box-shadow: 0 8px 32px 0 rgba(122, 4, 172, 0.37);
         }
 
         .work-title{
@@ -201,6 +206,28 @@
             } 
         }
 
+        .blinking-arrow{
+            display: flex;
+            position:absolute;
+            justify-content: center;
+            align-items: center;
+            z-index:4;
+            color: white;
+            bottom: 20px; /* This will keep it at the bottom */
+            animation: fading 4s infinite;
+        }
+        @keyframes fading {
+            0%{
+                opacity: 0%;
+            }
+            50%{
+                opacity: 100%;
+            }
+            100%{
+                opacity:0%;
+            }
+        }
+
         </style>
     </head>
     <body>
@@ -218,8 +245,9 @@
 
         </section>
 
+        
         <!-- Intro section -->
-        <section class = "bg-black">
+        <section class = "bg-black" style="position: relative;">
             <div class = "hero-container">
                 <a style = "z-index: 4; color:white; text-decoration: none;" class = "typewrite" data-period="1000" data-type='[ "Hey, My name is Olasubomi Badiru, you may know me as Anti_Shade. Come, let me show you some cool shit"]'>
                 <span class = "wrap" style = "z-index: 10;"></span>
@@ -229,12 +257,37 @@
                 </div>
                 <div  class = "circle very-glassy" style = "z-index:2">
                 </div>
+                
+                <div class = "blinking-arrow">
+                    <div id = "blinking_arrow">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+                        </svg> -->
+                        <svg width = "30" height = "50" viewBox="-1.6 -1.6 19.20 19.20" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#ffffff" stroke-width="0.256"></g><g id="SVGRepo_iconCarrier"> <path fill="#ffffff" fill-rule="evenodd" d="M8,12 C9.10457,12 10,12.8954 10,14 C10,15.1046 9.10457,16 8,16 C6.89543,16 6,15.1046 6,14 C6,12.8954 6.89543,12 8,12 Z M8,-3.10862447e-14 C8.55229,-3.10862447e-14 9,0.447715 9,1 L9,6.58579 L10.2929,5.2929 C10.6834,4.90237 11.3166,4.90237 11.7071,5.2929 C12.0976,5.68342 12.0976,6.31658 11.7071,6.70711 L8,10.4142 L4.29289,6.70711 C3.90237,6.31658 3.90237,5.68342 4.29289,5.2929 C4.68342,4.90237 5.31658,4.90237 5.70711,5.2929 L7,6.58579 L7,1 C7,0.447715 7.44772,-3.10862447e-14 8,-3.10862447e-14 Z"></path> </g></svg>
+
+                    </div>
+                </div>
             </div>
             
             
         </section>
 
-        <!-- website categories section -->
+        <section class = "py-5" style = "background-color: rgb(20, 15, 41);">
+            <div class = "container">
+                <div style = "color:white"><h2>Featured Work</h2></div>
+                <div class = "row feature-container">
+                    <div class = " feature-img col-lg-6 col-xl-6 col-12">
+                        <img class = "work-img gbopemi" src = "images/Gbopemi.png">
+                    </div>
+                    <div class = "feature-title pt-3 col-lg-6 col-xl-6 col-12">
+                        <h6 style = "color:white">"Gbopemi"<br><span>A tribute to my sister, "Gbopemi" is a Yoruba word that translates to accept my thanks.</span></h6>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!-- website works section -->
         <section id ="" class = "bg-black py-3" style = "p{color:white;}">
             <div  id = "works" class = "container works-container">
             
@@ -249,6 +302,8 @@
                 </div>
             </div>
 
+
+
             <div class = "work-flex mt-5 reversed">
                 <div class = "work">
                     <a href = "./artWorks/adunni.html">
@@ -257,6 +312,31 @@
                 </div>
                 <div class = "work-title">
                     <p class = "text-light flex-wrap h-25 h6">"Adunni"
+                    </p>
+                </div>
+            </div>
+
+            <div id = "adamu_flex" class = "work-flex mt-5">
+                <div class = "work">
+                    <a href = "./artWorks/gbopemi.html">
+                        <img  src="images/Gbopemi.png" class = "work-img" loading="eager">
+                    </a>
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Gbopemi"</p>
+                </div>
+            </div>
+
+            
+
+            <div class = "work-flex mt-5 reversed">
+                <div class = "work">
+                    <a href = "./artWorks/dontLoseYourself.html">
+                        <img src="images/Don't_Lose_Yourself.png" class = "work-img" loading="eager">
+                    </a>
+                </div>
+                <div class = "work-title">
+                    <p class = "text-light flex-wrap h-25 h6">"Don't Lose Yourself"
                     </p>
                 </div>
             </div>
