@@ -130,6 +130,12 @@
             justify-content: center;
             align-items: center;
             }
+
+            .big-image{
+                object-fit: cover;
+                width: 350px;
+                height: auto;
+            }
         }
 
         .fabs {
@@ -228,6 +234,10 @@
             }
         }
 
+        .feature-img{
+            object-fit: fill;
+        }
+
         </style>
     </head>
     <body>
@@ -249,7 +259,7 @@
         <!-- Intro section -->
         <section class = "bg-black" style="position: relative;">
             <div class = "hero-container">
-                <a style = "z-index: 4; color:white; text-decoration: none;" class = "typewrite" data-period="1000" data-type='[ "Hey, My name is Olasubomi Badiru, you may know me as Anti_Shade. Come, let me show you some cool shit"]'>
+                <a style = "z-index: 4; color:white; text-decoration: none;" class = "typewrite" data-period="1000" data-type='[ "Hey, My name is Olasubomi Badiru, you may know me as Anti_Shade. Come, let me show you some cool shit!!"]'>
                 <span class = "wrap" style = "z-index: 10;"></span>
                 </a>
                 <div id = "spinning_circle" class = "circle glass" style="width:200px;height:200px;z-index: 1;">
@@ -272,15 +282,18 @@
             
         </section>
 
+        <!-- Featured Works section -->
         <section class = "py-5" style = "background-color: rgb(20, 15, 41);">
             <div class = "container">
-                <div style = "color:white"><h2>Featured Work</h2></div>
+                <div style = "color:white"><h2>Spotlight</h2></div>
                 <div class = "row feature-container">
                     <div class = " feature-img col-lg-6 col-xl-6 col-12">
-                        <img class = "work-img gbopemi" src = "images/Gbopemi.png">
+                        <a href = "./artWorks/gbopemi.html">
+                            <img class = "work-img gbopemi big-image" src = "images/Gbopemi.png">
+                        </a>
                     </div>
                     <div class = "feature-title pt-3 col-lg-6 col-xl-6 col-12">
-                        <h6 style = "color:white">"Gbopemi"<br><span>A tribute to my sister, "Gbopemi" is a Yoruba word that translates to accept my thanks.</span></h6>
+                        <h6 style = "color:white">"Gbopemi"<br><span>A tribute to my sister, "Gbopemi" is a Yoruba word that translates to "Accept my thanks."</span></h6>
                     </div>
 
                 </div>
@@ -319,7 +332,7 @@
             <div id = "adamu_flex" class = "work-flex mt-5">
                 <div class = "work">
                     <a href = "./artWorks/gbopemi.html">
-                        <img  src="images/Gbopemi.png" class = "work-img" loading="eager">
+                        <img  src="images/Gbopemi.png" class = "work-img big-image" loading="eager">
                     </a>
                 </div>
                 <div class = "work-title">
@@ -365,7 +378,7 @@
 
             <div class = "work-flex mt-5">
                 <div class = "work">
-                    <img src="images/RELIEF.png" class = "work-img">
+                    <img src="images/RELIEF.png" class = "work-img big-image">
                 </div>
                 <div class = "work-title">
                     <p class = "text-light flex-wrap h-25 h6">"RELIEF":
@@ -375,7 +388,7 @@
 
             <div class = "work-flex mt-5 reversed">
                 <div class = "work">
-                    <img src="images/Release.png" class = "work-img">
+                    <img src="images/Release.png" class = "work-img big-image">
                 </div>
                 <div class = "work-title">
                     <p class = "text-light flex-wrap h-25 h6">"RELEASE"
@@ -421,8 +434,23 @@
             
         </section>
         
+        <!-- Events section -->
+        <section class = "py-5" style = "background-color: rgb(20, 15, 41);">
+            <div class = "container">
+                <div style = "color:white"><h2>Events</h2></div>
+                <div class = "row feature-container">
+                    <div class = " feature-img col-lg-6 col-xl-6 col-12">
+                        <a href="./events/propaganda.html"><img class = "work-img gbopemi big-image" src = "images/Propaganda.png">
+                        </a>
+                    </div>
+                    <div class = "feature-title pt-3 col-lg-6 col-xl-6 col-12">
+                        <h6 style = "color:white">"Propaganda"<br><span>With the help of friends and my family, we put on the an amazing exhibition on the 8th of July 2023</span></h6>
+                    </div>
 
-    
+                </div>
+            </div>
+
+        </section>
 
         <!-- footer section -->
         <section>
@@ -432,7 +460,7 @@
                 <p>
                 <span> <a style = "color:white;" href="https://www.instagram.com/anti__shade/" target="_blank">instagram</a></span>/ 
                 <span> <a style = "color:white;" href="https://badirusubomi.github.io/badirusubomidevportfolio.github.io/" target=""_blank>dev</a></span>/ 
-                <span> <a style = "color:white;" href="">shopify</a></span>/ 
+                <span> <a style = "color:white;" href="">shopify(soon)</a></span>/ 
                 </p>
             </footer>
 
