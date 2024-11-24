@@ -240,6 +240,7 @@
         }
 
         </style>
+        <script src="index.js" charset="utf-8"></script>
     </head>
     <body>
         <!-- Nav bar section -->
@@ -260,7 +261,7 @@
         <!-- Intro section -->
         <section class = "bg-black" style="position: relative;">
             <div class = "hero-container">
-                <a style = "z-index: 4; color:white; text-decoration: none;" class = "typewrite" data-period="1000" data-type='[ "Hey, My name is Olasubomi Badiru, you may know me as Anti_Shade. Come, let me show you some cool shit!!"]'>
+                <a style = "z-index: 4; color:white; text-decoration: none;" class = "typewrite" data-period="10000" data-type='[ "Hey, My name is Olasubomi Badiru, you may know me as Anti_Shade. Come, let me show you some cool shit!!"]'>
                 <span class = "wrap" style = "z-index: 10;"></span>
                 </a>
                 <div id = "spinning_circle" class = "circle glass" style="width:200px;height:200px;z-index: 1;">
@@ -304,8 +305,19 @@
         <!-- website works section -->
         <section id ="" class = "bg-black py-3" style = "p{color:white;}">
             <div  id = "works" class = "container works-container">
-            
-            <div id = "adamu_flex" class = "work-flex">
+                <div class = "work-flex mt-5 reversed">
+                    <div class = "work">
+                        <a href = "./artWorks/silent-night-in-palestine.html">
+                            <img src="images/silent-night.jpg" class = "work-img" loading="eager">
+                        </a>
+                    </div>
+                    <div class = "work-title">
+                        <p class = "text-light flex-wrap h-25 h6">"Silent night in Palestine"
+                        </p>
+                    </div>
+                </div>
+
+            <div id = "adamu_flex" class = "work-flex mt-5">
                 <div class = "work">
                     <a href = "./artWorks/adamu.html">
                         <img  src="images/ADAMU.jpg" class = "work-img" loading="eager">
@@ -472,6 +484,6 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src="index.js" charset="utf-8"></script>
+        
     </body>
 </html>
